@@ -1,0 +1,58 @@
+<div class="main">
+  <div class="row">
+    <div class="col-10 d-flex justify-content-center login-wrapper ">
+      <div class="row">
+        <img class="d-md-none" src="../assets/logos/logo.svg" alt="logo-mobile" width="30px" height="28px">
+        <img class="d-none d-md-block" src="../assets/logos/logo-supervielle.svg" alt="logo-desktop" width="134px" height="54px">
+        <h2 class="text-center">Iniciar sesión</h2>
+        <form [formGroup]="formLogin" (ngSubmit)="submitForm()">
+          <div class="col-12">
+            <div class="input">
+              <spv-form-input 
+              [formGroup]="formLogin" 
+              controlName="documento" 
+              label="Documento" 
+              [minNumbers]="8" 
+              [maxNumbers]="8" 
+              typeInput="text" 
+              [errorTextCustom]="'El campo solo puede tener números'">
+              </spv-form-input>
+            </div>
+            <div class="input">
+              <spv-form-input 
+              class="input"
+              [formGroup]="formLogin" 
+              controlName="usuario" 
+              label="Usuario" 
+              typeInput="text" 
+              [maxNumbers]="12"
+              [errorTextCustom]="'El campo solo puede tener números y letras'"
+              >
+              </spv-form-input>
+            </div>
+            <div>
+              <spv-form-input 
+              [formGroup]="formLogin" 
+              controlName="password" 
+              label="Contraseña" 
+              typeInput="password" 
+              [minNumbers]="6"
+              [errorTextCustom]="'El campo debe tener 1 mayúscula y 1 número'">
+              </spv-form-input>
+            </div>
+          </div>
+          <div class="col-12">
+            <p class="mt-2 pointer" (click)="forgotData()">¿Olvidaste tu usuario o clave?</p>
+          </div>
+          <div class="col-12 d-flex flex-column align-items-center">
+            <spv-custom-button text="Ingresar" [primary]="true"></spv-custom-button>
+            <spv-custom-button text="Registrarme" class="mt-2"></spv-custom-button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-2">
+      <img class="d-none d-md-block" src="../assets/images/bg-login.png" alt="imagen-login" width="440px" height="936px">
+    </div>
+  </div>
+</div>
